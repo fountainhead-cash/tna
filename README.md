@@ -4,12 +4,12 @@ TNA translates raw bitcoin transaction into bitdb document format, which allows 
 
 ![protein](./protein.png)
 
-TNA can be used as a standalone tool for quickly making sense of bitcoin raw transactions, and also powers [bitd](https://github.com/21centurymotorcompany/bitd) which stores the transformed format into MongoDB to form the basis of [BitDB](https://bitdb.network).
+TNA can be used as a standalone tool for quickly making sense of bitcoin raw transactions, and also powers [bitd](https://github.com/fountainhead-cash/bitd) which stores the transformed format into MongoDB to form the basis of [BitDB](https://bitdb.fountainhead.cash).
 
 # Installation
 
 ```
-npm install --save tna
+npm install --save fountainhead-tna
 ```
 
 # Usage
@@ -24,7 +24,7 @@ There are two methods:
 Generate bitdb document format from transaction hash
 
 ```
-const TNA = require('tna');
+const TNA = require('fountainhead-tna');
 (async function() {
   let result = await TNA.fromHash("3a737de7faa2ae1914f57ca0a11fd471334e40d4079d98cd77d27727e388b09d")
   console.log(result)
@@ -109,7 +109,7 @@ Generate bitdb document format from raw transaction string.
 The following code does the same thing as the `fromHash` example above, but doesn't require a bitcoin node since it's directly transforming from raw transaction.
 
 ```
-const TNA = require('tna');
+const TNA = require('fountainhead-tna');
 (async function() {
   let result = await TNA.fromTx("0100000001d5001345e77e66fa74f0012a81017ea1223c7a8adbcc9e37f2860f95ba97966d000000006b483045022100c1a0c5ffc5b78e39acb5be1438e28a10e5aac8337f5da7e4c25ba4c5f3eb01b5022050e9997bae423585da52d7cdc8951379f5bff07adb6756ffe70e7c7181f8a5bd4121032b345f89620af75f59aa91d47cc359e4dd907816ce0652604922726025712f52ffffffff024a976200000000001976a914c6187747f80b85170eef7013218e7b0fa441479988ac44033f00000000001976a9147e4616b7453185a5f071417bb4ac08e226dbef9888ac00000000")
   console.log(result)
