@@ -8,10 +8,10 @@ var fromHash = function(hash, config) {
   } else {
     c = {
       protocol: 'http',
-      user: process.env.BITCOIN_USERNAME ? process.env.BITCOIN_USERNAME : 'root',
-      pass: process.env.BITCOIN_PASSWORD ? process.env.BITCOIN_PASSWORD : 'bitcoin',
-      host: process.env.BITCOIN_IP ? process.env.BITCOIN_IP : '127.0.0.1',
-      port: process.env.BITCOIN_PORT ? process.env.BITCOIN_PORT : '8332',
+      user: process.env.rpc_user ? process.env.rpc_user : 'root',
+      pass: process.env.rpc_pass ? process.env.rpc_pass : 'bitcoin',
+      host: process.env.rpc_host ? process.env.rpc_host : '127.0.0.1',
+      port: process.env.rpc_port ? process.env.rpc_port : '8332',
     }
   }
   
