@@ -1,5 +1,5 @@
 require('dotenv').config()
-const bch = require('bitcoincashjs')
+const bch = require('bitcore-lib-cash')
 const RpcClient = require('bitcoind-rpc');
 var fromHash = function(hash, config) {
   let c;

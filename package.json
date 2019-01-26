@@ -6,8 +6,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "bitcoincashjs": "^0.1.10",
     "bitcoind-rpc": "^0.7.2",
+    "bitcore-lib-cash": "^0.19.0",
     "dotenv": "^6.0.0"
   }
 }
