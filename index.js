@@ -27,9 +27,8 @@ var fromHash = function(hash, config) {
     })
   })
 }
-var fromTx = function(transaction, options) {
+var fromGene = function(gene, options) {
   return new Promise(function(resolve, reject) {
-    let gene = new bch.Transaction(transaction);
     let t = gene.toObject()
     let result = [];
     let inputs = [];
@@ -119,7 +118,12 @@ var fromTx = function(transaction, options) {
     })
   })
 }
+var fromTx = function(transaction, options) {
+    return fromGene(new bch.Transaction(transaction), options);
+}
+
 module.exports = {
   fromHash: fromHash,
+  fromGene: fromGene,
   fromTx: fromTx
 }
